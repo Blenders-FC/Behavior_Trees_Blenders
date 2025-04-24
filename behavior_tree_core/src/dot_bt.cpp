@@ -63,6 +63,9 @@ std::string DotBt::defineNodeDot(TreeNode* node, const std::string& alias)
     case BT::PARALLEL:
       output += "[label=\"-->\n-->\" penwidth=\"2\"  shape=\"box\"";
       break;
+    case BT::REPEAT:
+      output += "[label=\"↻\" penwidth=\"2\"  shape=\"box\"";
+      break;
     case BT::DECORATOR:
       output += "[label=\"D\" penwidth=\"2\" shape=\"diamond\"";
       break;

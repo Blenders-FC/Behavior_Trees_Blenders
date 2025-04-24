@@ -41,7 +41,7 @@
 
 #endif
 
-   #define DEBUG  // uncomment this line if you want to print debug messages
+//    #define DEBUG  // uncomment this line if you want to print debug messages
 
 #ifdef DEBUG
   // #define DEBUG_STDERR(x) (std::cerr << (x))
@@ -72,7 +72,7 @@ namespace BT
 // Enumerates the possible types of a node, for drawinf we have do discriminate whoich control node it is:
 
 enum NodeType {ACTION_NODE, CONDITION_NODE, CONTROL_NODE};
-enum DrawNodeType {PARALLEL, SELECTOR, SEQUENCE, SEQUENCESTAR, SELECTORSTAR, ACTION, CONDITION, DECORATOR};
+enum DrawNodeType {PARALLEL, SELECTOR, SEQUENCE, SEQUENCESTAR, SELECTORSTAR, ACTION, CONDITION, DECORATOR, REPEAT};
 // Enumerates the states every node can be in after execution during a particular
 // time step:
 // - "Success" indicates that the node has completed running during this time step;

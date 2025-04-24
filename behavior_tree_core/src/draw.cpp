@@ -162,6 +162,9 @@ void draw_node(float x, float y, int node_type, const char *leafName, int status
     case BT::DECORATOR:
         drawString(font, "D", (x + NODE_WIDTH/2 -0.005), (y - NODE_HEIGHT/2), 0);
         break;
+    case BT::REPEAT:
+        drawString(font, "↻", (x + NODE_WIDTH/2 -0.005), (y - NODE_HEIGHT/2), 0);
+        break;
     case BT::ACTION:
     {
         NODE_HEIGHT = 0.02*(compute_node_lines(leafName));

@@ -102,7 +102,7 @@ public:
    * Run it in a separate thread in your BT application.
    */
   void publish();
-private:
+
   /**
    * @brief Produces DOT code for the tree recursively.
    *
@@ -119,7 +119,8 @@ private:
    * @param parent_alias The alias of the parent to be used in the DOT code.
    * Defaults to empty string in case this node is the root of the tree.
    */
-  void produceDot(TreeNode* node, TreeNode* parent = NULL, const std::string& parent_alias = "");
+   void produceDot(TreeNode* node, TreeNode* parent = NULL, const std::string& parent_alias = "");
+private:
 
   /**
    * @brief Produces DOT code for the definition of the node.
