@@ -19,10 +19,22 @@
 
 void Execute(BT::ControlNode* root, int TickPeriod_milliseconds)
 {
-    std::cout << "Start Drawing!" << std::endl;
-    // Starts in another thread the drawing of the BT
-    std::thread t2(&drawTree, root);
-    t2.detach();
+    // Detect if DISPLAY is available
+    const char* display = std::getenv("DISPLAY");
+    bool display_available = (display != nullptr) && (std::string(display) != "");
+
+    if (display_available)
+    {
+        std::cout << "Start Drawing!" << std::endl;
+        // Starts in another thread the drawing of the BT
+        std::thread t2(&drawTree, root);
+        t2.detach();
+    }
+    else
+    {
+        std::cout << "[WARNING] No DISPLAY detected! Skipping BT drawing visualization." << std::endl;
+    }
+    
     BT::DotBt dotbt(root);
     std::thread t(&BT::DotBt::publish, dotbt);
 
